@@ -2,7 +2,6 @@ import cv2
 from matplotlib import pyplot as plt
 import os
 
-
 def change_filename(before):
     ext = os.path.splitext(before)[1]
     path_without_ext = os.path.splitext(before)[0]
@@ -35,7 +34,7 @@ def crop_to_content(path):
 # 2. 사전식 정렬을 했을 경우 바로 다음 파일이 이전 문제에 대한 해설이어야 합니다. 물론 하얀 배경에 검은 글씨여야 합니다.
 # 3. 그러면 아래 코드를 실행 시에, 문제 번호를 지정한 후, 컨텐츠를 crop 합니다.
 image_extensions = ('.jpg', '.jpeg', '.png')
-problems_set_path = ".\problems_set\crop_contents"
+problems_set_path = "./math_problems/data/problems_set/crop_contents"
 image_paths = [os.path.join(problems_set_path, file) for file in os.listdir(problems_set_path) if file.lower().endswith(image_extensions)]
 for path in image_paths:
     change_filename(path)
